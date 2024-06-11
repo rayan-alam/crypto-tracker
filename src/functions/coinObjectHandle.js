@@ -1,4 +1,4 @@
-export const coinObjectHandle = (setState, data ) => {
+export const coinObjectHandle = ( setState, data ) => {
     setState({
       id: data.id,
       name: data.name,
