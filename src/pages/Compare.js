@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import Header from '../components/Common/Header';
 import SelectCoins from '../components/Compare/SelectCoins';
-import SelectDays from '../components/Coin/SelectDays';
+import SelectDays from '../components/Coin/SelectDays'; 
 import List from '../components/Dashboard/List';
 import LineChart from '../components/Coin/LineChart';
 import CoinInfo from '../components/Coin/CoinInfo';
@@ -30,29 +30,7 @@ function Compare() {
       datasets: [],
     });
   
-    useEffect(() => {
-      getData();
-    }, []);
-  
-    const getData = async () => {
-      setLoading(true);
-      const coins = await get100coins();
-      if (coins) {
-        setAllCoins(coins);
-        const data1 = await getCoinData(crypto1);
-        const data2 = await getCoinData(crypto2);
-        coinObjectHandle(data1, setCoin1Data);
-        coinObjectHandle(data2, setCoin2Data);
-        if (data1 && data2) {
-          // getPrices
-          const prices1 = await getCoinPrices(crypto1, days, priceType);
-          const prices2 = await getCoinPrices(crypto2, days, priceType);
-          settingChartData(setChartData, prices1, prices2);
-          setLoading(false);
-        }
-      }
-    };
-  
+
     const onCoinChange = async (e, isCoin2) => {
       setLoading(true);
       if (isCoin2) {
