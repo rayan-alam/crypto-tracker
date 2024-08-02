@@ -25,7 +25,7 @@ const index = () => {
            <Button 
             text={"Dashboard"}
             // outlined={true}
-            onClick={() => console.log("BTN Clicked")}
+            onClick={() => console.log("Dashboard BTN Clicked")}
             >
            </Button>
           </Link>
