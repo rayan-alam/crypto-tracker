@@ -115,7 +115,7 @@ import { settingChartData } from '../functions/settingChartData';
 import PriceType from '../components/Coin/PriceType';
 
 function CoinPage() {
-  const { id } = useParams();
+  const { id } = useParams(); // for react router dom
   const [isLoading, setIsLoading] = useState(true);
   const [coinData, setCoinData] = useState(null);
   const [days, setDays] = useState(30);
